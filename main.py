@@ -12,8 +12,9 @@ import os
 import tempfile
 import traceback
 from typing import List, Optional
+import puremagic
 
-import magic
+
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
@@ -85,7 +86,10 @@ async def extract(
 
     try:
         # 2. Detect true file type from content (not extension)
-        mime_type = magic.from_file(tmp_path, mime=True)
+        # ... inside the extract function:
+        mime_type = puremagic.from_file(tmp_path, mime=True)
+
+        
         is_pdf = mime_type == "application/pdf"
         is_image = mime_type in ("image/png", "image/jpeg", "image/tiff")
 

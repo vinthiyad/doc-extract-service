@@ -1,0 +1,33 @@
+# requirements.txt — Document Extraction Microservice
+# Python 3.12+ | Windows / Linux / macOS | Render free tier compatible
+# All packages are pre-built wheels — no C++ compilation required.
+
+# --- Web Framework ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+
+# --- PDF Processing ---
+pdfplumber==0.11.9
+PyMuPDF==1.25.5
+
+# --- OCR Engine (Tesseract wrapper) ---
+pytesseract==0.3.13
+
+# --- Image Preprocessing ---
+opencv-python-headless==4.10.0.84
+Pillow==11.1.0
+
+# --- Invoice Field Extraction ---
+invoice2data==0.4.5
+pyyaml==6.0.2
+dateparser==1.4.0
+
+# --- File Type Detection (pure Python, no system deps) ---
+puremagic==1.29
+
+# --- Data Validation ---
+pydantic==2.10.4
+
+# --- HTTP Client (for health checks / callbacks) ---
+httpx==0.28.1
