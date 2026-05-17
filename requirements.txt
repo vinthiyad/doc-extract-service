@@ -1,10 +1,10 @@
 # requirements.txt — Document Extraction Microservice
-# Python 3.12+ | Windows / Linux / macOS | Render free tier compatible
+# Python 3.12 | Windows / Linux / macOS | Render free tier compatible
 # All packages are pre-built wheels — no C++ compilation required.
 
 # --- Web Framework ---
 fastapi==0.115.6
-uvicorn[standard]==0.34.0
+uvicorn==0.34.0
 python-multipart==0.0.20
 
 # --- PDF Processing ---
